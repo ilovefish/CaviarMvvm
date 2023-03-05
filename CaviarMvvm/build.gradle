@@ -3,10 +3,10 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'maven-publish'
 }
-task generateSourcesJar(type: Jar){
-    from android.sourceSets.main.java.srcDirs
-    classifier 'sources'
-}
+//task generateSourcesJar(type: Jar){
+//    from android.sourceSets.main.java.srcDirs
+//    classifier 'sources'
+//}
 
 android {
     namespace 'com.ilovefish.caviarmvvm'
@@ -36,9 +36,16 @@ android {
         targetCompatibility JavaVersion.VERSION_11
     }
     kotlinOptions {
+
         jvmTarget = '11'
         // Java 8 语言功能支持 https://developer.android.com/studio/write/java8-support
     }
+
+//    publishing {
+//        singleVariant('release') {
+//            withSourcesJar()
+//        }
+//    }
 }
 
 afterEvaluate {
