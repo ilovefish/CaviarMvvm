@@ -3,6 +3,10 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'maven-publish'
 }
+task generateSourcesJar(type: Jar){
+    from android.sourceSets.main.java.srcDirs
+    classifier 'sources'
+}
 
 android {
     namespace 'com.ilovefish.caviarmvvm'
@@ -56,6 +60,19 @@ android {
 //            }
 //        }
 //    }
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                // 这里头是artifacts的配置信息，不填会采用默认的
+                groupId = 'com.ilovefish'
+                artifactId = 'caviarmvvm'
+                version = '0.0.3'           //当前版本依赖库版本号，这个jitpack不会使用到，只是我们开发者自己查看
+            }
+        }
+    }
 }
 
 dependencies {
