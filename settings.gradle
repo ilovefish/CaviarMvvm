@@ -1,0 +1,32 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        maven {
+            url 'https://jitpack.io'
+        }
+        mavenCentral()
+        google()
+    }
+}
+// Version Catalog Step1: 激活功能
+enableFeaturePreview( 'VERSION_CATALOGS')
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        maven {
+            url 'https://jitpack.io'
+        }
+        mavenCentral()
+        google()
+    }
+    versionCatalogs {
+        libs {
+            from(files("libs.versions.toml"))
+        }
+    }
+}
+rootProject.name = "CaviarMvvm"
+include ':app'
+include ':CaviarMvvm'

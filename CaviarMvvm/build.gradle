@@ -1,0 +1,139 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.ilovefish.caviarmvvm'
+    compileSdk 33
+
+    defaultConfig {
+        minSdk 21
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures {
+        dataBinding = true
+        viewBinding = true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+
+        jvmTarget = '11'
+        // Java 8 语言功能支持 https://developer.android.com/studio/write/java8-support
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation libs.runtimeKtx
+    //material
+    implementation libs.material
+    //kotlin
+    // 如果您的目标是 JDK 7 或 JDK 8，则可以使用 Kotlin 标准库的扩展版本。它们包含新 JDK 版本中添加的 API 的附加扩展功能。根据您的 JDK 版本，使用 kotlin-stdlib-jdk7 或 kotlin-stdlib-jdk8 代替 kotlin-stdlib
+    // 查看和ktl的对应关系 https://mvnrepository.com/artifact/org.jetbrains.kotlin
+    // $kotlin_version 说明和kotlin版本对应
+    implementation libs.stdlibJdk8
+    // Android KTX 是包含在 Android Jetpack 及其他 Android 库中的一组 Kotlin 扩展程序。
+    // https://developer.android.com/kotlin/ktx
+    implementation libs.androidCoreKtx
+    implementation libs.appcompat
+
+    //    <<重学安卓>>
+    //    Lifecycle 的本质是解决 “生命周期管理” 的一致性问题
+    //    LiveData 的本质是解决 “跨域消息同步” 的一致性问题
+    //    ViewModel 的本质是解决 “状态保存恢复” 的一致性问题
+    //    DataBinding 的本质是解决 “视图实例的 null 安全” 的一致性问题
+    //    Navigation 的本质是解决 “路由初始参数恢复” 的一致性问题
+    // <!-- Lifecycle Start https://developer.android.com/jetpack/androidx/releases/lifecycle -->
+    def lifecycle_version = "2.5.0-alpha03"
+    // Lifecycles only (without ViewModel or LiveData)
+    api libs.lifecycleRuntimeKtx
+    // Annotation processor
+    // kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+    // alternately - if using Java8, use the following instead of lifecycle-compiler
+    api libs.lifecycleCommonJava8
+    // optional 可选
+    // optional - helpers for implementing LifecycleOwner in a Service
+    api libs.lifecycleService
+    // optional - ProcessLifecycleOwner provides a lifecycle for the whole application process
+    api libs.lifecycleProcess
+    // <!-- Lifecycle Stop -->
+
+
+    // <!-- Viewmodel Start https://developer.android.com/topic/libraries/archicomposetecture/viewmodel -->
+    // Saved state module for ViewModel
+    api libs.lifecycleViewmodelSavedstate
+    // lifecycle-extensions 中的 API 已弃用。您可以为特定 Lifecycle 工件添加所需的依赖项。
+    // api 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    // viewModel
+    api libs.lifecycleViewmodelKtx
+    // ViewModel utilities for Compose
+    api libs.lifecycleViewmodelCompose
+    // <!-- Viewmodel Stop -->
+
+
+    // <!-- Livedata Start https://developer.android.com/topic/libraries/architecture/livedata -->
+    def arch_version = "2.1.0"
+    api libs.lifecycleLivedataKtx
+    api libs.livedataUnpeek
+    // optional - ReactiveStreams support for LiveData
+    api libs.lifecycleReactivestreamsKtx
+    // optional - Test helpers for LiveData
+    testApi libs.archCoreTesting
+    // <!-- Livedata Stop -->
+
+    // <!-- Navigation Start https://developer.android.com/jetpack/androidx/releases/navigation -->
+    def nav_version = "2.3.5"
+    // Java language implementation
+    // api "androidx.navigation:navigation-fragment:$nav_version"
+    // api "androidx.navigation:navigation-ui:$nav_version"
+    // Kotlin
+    api libs.navFragmentKtx
+    api libs.navUiKtx
+    // Feature module Support
+    api libs.navigationDynamicFeaturesFragment
+    // Jetpack Compose Integration
+//    api "androidx.navigation:navigation-compose:2.4.1"
+    // Testing Navigation
+    api libs.navigationTesting
+    // <!-- Navigation Stop -->
+
+    // <!-- Retrofit Start https://gitee.com/mirrors/retrofit?_from=gitee_search
+    //                     https://square.github.io/retrofit/#download-->
+    def retrofi_version = "2.9.0"
+    api libs.retrofit
+    api libs.retrofitGson
+    // 基于SharedReferences的OkHttp 3持久CookieJar实现。
+    // https://gitee.com/mirrors_franmontiel/PersistentCookieJar?_from=gitee_search
+    api libs.persistentCookieJar
+    // 动态替换BaseUrl库 使用可参考 https://github.com/JessYanCoding/RetrofitUrlManager
+    api libs.retrofitUrlmanager
+    // <!-- Retrofit Stop -->
+
+    // kotlin android 增强库
+    // https://github.com/Kotlin/anko
+    api libs.anko
+
+
+    // Longan 是一个简化 Android 开发的 Kotlin 工具类集合，可以使代码更加简洁易读。
+    // https://dylancaicoding.github.io/Longan/#/
+    // https://github.com/DylanCaiCoding/Longan
+    api libs.longan
+    // Optional
+    api libs.longanDesign
+}
