@@ -25,12 +25,12 @@ android {
         dataBinding = true
         viewBinding = true
     }
-//    buildTypes {
-//        release {
-//            minifyEnabled false
-//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-//        }
-//    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
@@ -52,10 +52,11 @@ afterEvaluate {
     publishing {
         publications {
             release(MavenPublication) {
+                from components.release // 表示发布 release（jitpack 都不会使用到）
                 // 这里头是artifacts的配置信息，不填会采用默认的
                 groupId = 'com.ilovefish'
                 artifactId = 'caviarmvvm'
-                version = '0.0.3'           //当前版本依赖库版本号，这个jitpack不会使用到，只是我们开发者自己查看
+                version = '0.0.5'           //当前版本依赖库版本号，这个jitpack不会使用到，只是我们开发者自己查看
             }
         }
     }
