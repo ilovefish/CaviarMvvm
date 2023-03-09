@@ -2,12 +2,6 @@ package com.ilovefish.caviarmvvm.ext.download
 
 import androidx.lifecycle.MutableLiveData
 
-/**
- * @author : hgj
- * @date   : 2020/6/30
- *
- */
-
 fun downLoadExt(downloadResultState: MutableLiveData<DownloadResultState>): OnDownLoadListener {
     return object : OnDownLoadListener {
         override fun onDownLoadPrepare(key: String) {

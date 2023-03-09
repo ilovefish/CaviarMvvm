@@ -6,8 +6,6 @@ import java.util.*
 import java.util.zip.*
 
 /**
- * 作者　: hegaojian
- * 时间　: 2020/3/26
  * 描述　:
  */
 class ZipHelper private constructor() {

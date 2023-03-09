@@ -5,8 +5,6 @@ import com.ilovefish.caviarmvvm.network.BaseResponse
 import com.ilovefish.caviarmvvm.network.ExceptionHandle
 
 /**
- * 作者　: hegaojian
- * 时间　: 2020/4/9
  * 描述　: 自定义结果集封装类
  */
 sealed class ResultState<out T> {

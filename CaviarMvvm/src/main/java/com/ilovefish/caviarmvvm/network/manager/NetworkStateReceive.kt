@@ -7,8 +7,6 @@ import android.net.ConnectivityManager
 import com.ilovefish.caviarmvvm.util.NetworkUtil
 
 /**
- * 作者　: hegaojian
- * 时间　: 2020/5/2
  * 描述　: 网络变化接收器
  */
 class NetworkStateReceive : BroadcastReceiver() {

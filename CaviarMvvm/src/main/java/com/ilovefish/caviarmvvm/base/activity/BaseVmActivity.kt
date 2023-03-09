@@ -11,11 +11,6 @@ import com.ilovefish.caviarmvvm.ext.util.notNull
 import com.ilovefish.caviarmvvm.network.manager.NetState
 import com.ilovefish.caviarmvvm.network.manager.NetworkStateManager
 
-/**
- * 作者　: hegaojian
- * 时间　: 2019/12/12
- * 描述　: ViewModelActivity基类，把ViewModel注入进来了
- */
 abstract class BaseVmActivity<VM : BaseViewModel> : AppCompatActivity() {
 
     lateinit var mViewModel: VM
@@ -57,7 +52,7 @@ abstract class BaseVmActivity<VM : BaseViewModel> : AppCompatActivity() {
      * 创建viewModel
      */
     private fun createViewModel(): VM {
-        return ViewModelProvider(this).get(getVmClazz(this))
+        return ViewModelProvider(this)[getVmClazz(this)]
     }
 
     /**

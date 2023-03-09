@@ -5,11 +5,6 @@ import android.app.Application
 import android.os.Bundle
 import com.ilovefish.caviarmvvm.ext.util.logd
 
-/**
- * 作者　: hegaojian
- * 时间　: 20120/1/7
- * 描述　:
- */
 class KtxLifeCycleCallBack : Application.ActivityLifecycleCallbacks {
 
     override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {

@@ -4,9 +4,7 @@ import okhttp3.MediaType
 import okhttp3.Request
 
 /**
- * 作者　: hegaojian
- * 时间　: 2020/3/26
- * 描述　:
+ *
  */
 interface FormatPrinter {
     /**

@@ -7,8 +7,6 @@ import androidx.navigation.fragment.NavHostFragment
 
 
 /**
- * 作者　: hegaojian
- * 时间　: 2021/6/29
  * 描述　: Hide - Show NavHostFragment
  */
 class NavHostFragmentHideShow : NavHostFragment() {

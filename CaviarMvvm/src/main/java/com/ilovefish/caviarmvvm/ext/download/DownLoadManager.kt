@@ -11,11 +11,6 @@ import retrofit2.Retrofit
 import java.io.File
 import java.util.concurrent.TimeUnit
 
-/**
- * @author : hgj
- * @date   : 2020/7/13
- */
-
 object DownLoadManager {
     private val retrofitBuilder by lazy {
         Retrofit.Builder()

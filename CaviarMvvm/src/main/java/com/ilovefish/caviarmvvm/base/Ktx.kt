@@ -12,20 +12,11 @@ import com.ilovefish.caviarmvvm.ext.lifecycle.KtxAppLifeObserver
 import com.ilovefish.caviarmvvm.ext.lifecycle.KtxLifeCycleCallBack
 import com.ilovefish.caviarmvvm.network.manager.NetworkStateReceive
 
-/**
- * 作者　: hegaojian
- * 时间　: 2019/12/14
- * 描述　:
- */
-
 // lazy：初始化方式已确定，只是在使用的时候执行
 val appContext: Application by lazy { Ktx.app }
 
 class Ktx : ContentProvider() {
 
-    /***
-     * @
-     * */
     companion object {
         // lateinit：之后初始化，使用之前通过 ::name.isInitialized 判断是否初始化
         lateinit var app: Application

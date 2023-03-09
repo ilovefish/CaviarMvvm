@@ -6,8 +6,6 @@ import java.lang.reflect.ParameterizedType
 import java.lang.reflect.Type
 
 /**
- * 作者　: hegaojian
- * 时间　: 2020/2/27
  * 描述　:
  */
 class CoroutineCallAdapterFactory private constructor() : CallAdapter.Factory() {

@@ -6,7 +6,6 @@ import android.graphics.Color
 import android.graphics.drawable.BitmapDrawable
 import android.view.View
 import android.widget.ImageView
-import org.jetbrains.annotations.NotNull
 
 /**
  * 设置view显示

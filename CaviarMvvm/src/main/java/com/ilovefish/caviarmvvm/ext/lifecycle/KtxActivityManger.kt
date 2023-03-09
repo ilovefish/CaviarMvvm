@@ -3,11 +3,6 @@ package com.ilovefish.caviarmvvm.ext.lifecycle
 import android.app.Activity
 import java.util.*
 
-/**
- * 作者　: hegaojian
- * 时间　: 2021/6/8
- * 描述　:
- */
 object KtxActivityManger {
     //activity集合
     private val mActivityList = LinkedList<Activity>()

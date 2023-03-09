@@ -15,10 +15,10 @@ class TokenOutInterceptor: Interceptor {
             val string = response.body()!!.string()
             val responseBody = ResponseBody.create(mediaType, string)
             // TODO
-//                    val apiResponse = gson.fromJson(string, ApiResponse::class.java)
-//                    //判断逻辑 模拟一下
-//                    if (apiResponse.errorCode == 99999) {
-//                    }
+//            val apiResponse = gson.fromJson(string, ApiResponse::class.java)
+//            //判断逻辑 模拟一下
+//            if (apiResponse.errorCode == 99999) {
+//            }
             response.newBuilder().body(responseBody).build()
         } else {
             response

@@ -11,12 +11,6 @@ import okhttp3.Request
 import java.security.MessageDigest
 import java.security.NoSuchAlgorithmException
 
-
-/**
- * 作者　: hegaojian
- * 时间　: 2020/3/26
- * 描述　:
- */
 class DefaultFormatPrinter : FormatPrinter {
 
     private var appendTag = ""

@@ -5,11 +5,6 @@ import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
 import com.ilovefish.caviarmvvm.callback.livedata.BooleanLiveData
 
-/**
- * 作者　: hegaojian
- * 时间　: 20120/1/7
- * 描述　:
- */
 object KtxAppLifeObserver : LifecycleObserver {
 
     var isForeground = BooleanLiveData()

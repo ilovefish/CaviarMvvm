@@ -9,11 +9,6 @@ import java.io.RandomAccessFile
 import java.nio.channels.FileChannel
 import java.text.DecimalFormat
 
-/**
- * @author : hgj
- * @date   : 2020/7/13
- */
-
 object FileTool {
 
     //定义GB的计算常量

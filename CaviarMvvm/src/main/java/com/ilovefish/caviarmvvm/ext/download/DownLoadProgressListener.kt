@@ -1,10 +1,5 @@
 package com.ilovefish.caviarmvvm.ext.download
 
-/**
- * @author : hgj
- * @date   : 2020/7/13
- */
-
 interface DownLoadProgressListener {
 
     /**

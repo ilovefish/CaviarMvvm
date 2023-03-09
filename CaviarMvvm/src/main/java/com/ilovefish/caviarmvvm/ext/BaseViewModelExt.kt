@@ -15,12 +15,6 @@ import com.ilovefish.caviarmvvm.state.paresException
 import com.ilovefish.caviarmvvm.state.paresResult
 
 /**
- * 作者　: hegaojian
- * 时间　: 2020/4/8
- * 描述　:BaseViewModel请求协程封装
- */
-
-/**
  * 显示页面状态，这里有个技巧，成功回调在第一个，其后两个带默认值的回调可省
  * @param resultState 接口返回值
  * @param onLoading 加载中

@@ -18,8 +18,6 @@ import javax.xml.transform.stream.StreamSource
 import kotlin.experimental.and
 
 /**
- * 作者　: hegaojian
- * 时间　: 2020/3/26
  * 描述　:
  */
 class CharacterHandler private constructor() {
